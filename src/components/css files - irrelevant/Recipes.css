@@ -1,0 +1,15 @@
+.error {
+  font-size: 60px;
+  text-align: center;
+  margin: 30px;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  /* margin: 10px; */
+  justify-content: center;
+  /* background: url("https://cdn.pixabay.com/photo/2017/06/06/22/46/mediterranean-cuisine-2378758_960_720.jpg"); */
+  /* background-size: contain; */
+  background: burlywood;
+}

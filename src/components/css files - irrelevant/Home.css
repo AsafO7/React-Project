@@ -1,0 +1,78 @@
+.main-container {
+  /* background: url("https://cdn.pixabay.com/photo/2015/09/05/20/02/coding-924920_960_720.jpg"); */
+  background-size: cover;
+  min-height: 595px;
+}
+
+.cards {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.trans-bg {
+  position: absolute;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  min-height: 800px;
+}
+
+.main-header {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  z-index: 1;
+  opacity: 0.6;
+  flex-direction: column;
+}
+
+.main-header > h1,
+h3 {
+  margin-top: 10px;
+  background: white;
+  width: 90%;
+  border-radius: 5px;
+}
+
+.card {
+  border: 9px solid #4a27fd;
+  margin: 20px 0 10px 0;
+  background: #c7c7c7;
+  box-shadow: 4px 3px 13px 6px rgba(0, 0, 0, 0.7);
+  width: 250px;
+  z-index: 1;
+  height: auto;
+  padding: 2px;
+}
+
+@media screen and (min-width: 570px) {
+  .cards {
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+  }
+
+  .main-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .main-header {
+    flex-basis: 100%;
+  }
+
+  .main-header > h1,
+  h3 {
+    width: auto;
+  }
+
+  .card {
+    margin-bottom: 50px;
+    flex-basis: 30%;
+  }
+
+  .trans-bg {
+    min-height: 595px;
+  }
+}

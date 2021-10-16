@@ -1,0 +1,28 @@
+.hero-container {
+  width: 100%;
+  display: flex;
+  /* justify-content: center; */
+  background: rgb(199, 164, 118);
+}
+
+.hero {
+  width: 50%;
+  height: auto;
+  margin: 5px;
+}
+
+.hero-about {
+  font-size: 14px;
+  flex-basis: 50%;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 10px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: rgb(22, 21, 21);
+}
+
+@media screen and (min-width: 600px) {
+  .hero-about {
+    font-size: 22px;
+  }
+}
