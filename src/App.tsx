@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Navbar } from './components/navbar/Navbar';
 import { Home } from './components/main-page/Home';
-import { About } from './components/about/About';
+// import { Projects } from './components/projects/Projects';
 import { DishesList }  from './components/dish-list/DishesList';
 import { DishInfo } from './components/dish/dish-info/DishInfo';
 
@@ -13,9 +13,9 @@ function App() {
         <Route exact path="/">
           <Home />
         </Route>
-        <Route path="/about">
-          <About />
-        </Route>
+        {/* <Route path="/projects">
+          <Projects />
+        </Route> */}
         <Route path="/disheslist">
           <DishesList />
         </Route>

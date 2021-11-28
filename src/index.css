@@ -113,10 +113,6 @@ ul {
   transition: all 0.3s linear;
 }
 
-.show-container {
-  height: 10rem;
-}
-
 .nav-center {
   font-family: fantasy;
 }
@@ -174,118 +170,107 @@ ul {
 
 /*********************** Home section *************************/
 
-.main-container {
-  background: url("https://cdn.pixabay.com/photo/2015/09/05/20/02/coding-924920_960_720.jpg");
-  background-size: cover;
-  min-height: 595px;
+.main-container{
+  /* background: url("https://cdn.pixabay.com/photo/2015/09/05/20/02/coding-924920_960_720.jpg");
+  background-size: cover; */
+  /* min-height: 595px; */
+  /* height: 100%; */
+  /* background: #e5e5e5; */
+  background: rgb(76, 104, 189);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 .about {
-  margin: 50px 0;
+  /* margin: 2rem 0; */
+  margin-top: 20px;
 }
 
-.about > p {
-  margin: 10px auto;
-  box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.7);
+.about-me {
+  padding: 13% 15px;
+  /* height: 200px; */
+  overflow: scroll;
+}
+
+.about-me, .icons {
+  height: 330px;
 }
 
 .square {
-  height: 250px;
-  box-shadow: 3px 5px 3px 3px rgba(0, 0, 0, 0.7);
-  width: 90%;
-  background: blue;
-  margin: 10px auto;
-  opacity: 0.9;
+  height: 390px;
+  /* box-shadow: 3px 5px 3px 3px rgba(0, 0, 0, 0.7); */
+  width: 100%;
+  margin: 0 auto;
+  opacity: 0.5;
 }
-
-/* .main-header > h3,
-.square {
-  display: inline-block;
-} */
 
 .skills {
-  margin: auto;
   text-align: center;
-  margin-top: 1.5rem;
+  display: flex;
+  /* z-index: 5; */
+  justify-content: space-evenly;
+  height: 390px;
 }
 
-.skill-header,
-.cards-title {
-  /* display: inline-block; */
-  width: 90%;
-  margin: 0 auto 1rem auto;
+.skill-header, .about-header {
+  margin-bottom: 1rem;
   font-size: 28px;
+  padding: 1px;
+}
+
+.skills-container, .about {
+  flex-basis: 50%;
+  margin: 10px 10px;
+  /* flex: 1; */
 }
 
 .icons {
-  background: rgba(247, 244, 244, 0.6);
+  background: rgba(247, 244, 244, 0.95);
+  padding-top: 10px;
+  box-shadow: 2px 2px 4px 5px rgba(0, 0, 0, 0.7);
 }
 
 .icon {
-  width: 6.875rem;
-  height: 6.25rem;
+  width: 4.875rem;
+  height: 4.25rem;
   justify-content: center;
+  box-shadow: 3px 3px 2px 2px rgba(0, 0, 0, 0.7);
+  margin: 3px;
+  border-radius: 25px;
 }
 
-.cards {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+.icons, .about-me, .skill-header, .about-header {
+  border-radius: 25px;
 }
 
 .trans-bg {
-  position: absolute;
   width: 100%;
-  background: rgba(0, 0, 0, 0.1);
-  min-height: 800px;
+  /* background: rgba(0, 0, 0, 0.7); */
+  /* background: rgb(76, 104, 189); */
+  height: 390px;
 }
 
 .main-header {
   display: flex;
   align-items: center;
   text-align: center;
-  z-index: 1;
   flex-direction: column;
-}
-
-.main-header > h1,
-p {
-  margin-top: 2rem;
-  width: 90%;
-  border-radius: 5px;
+  width: 100%;
+  position: absolute;
 }
 
 .skill-header,
-.cards-title,
-.main-header > h1,
-p {
-  background: rgba(247, 244, 244, 0.8);
+.about-header,
+.about-me {
+  background: rgb(247, 244, 244);
   font-family: "Open Sans Condensed", sans-serif;
   font-style: italic;
   font-weight: bold;
-}
-
-.cards-title {
-  margin-top: 7rem;
-}
-
-.card {
-  border: 5px solid #4a27fd;
-  margin: 20px 0 10px 0;
-  background: #c7c7c7;
-  box-shadow: 4px 3px 13px 6px rgba(0, 0, 0, 0.7);
-  width: 250px;
-  z-index: 1;
-  height: auto;
-  padding: 2px;
+  box-shadow: 2px 2px 4px 5px rgba(0, 0, 0, 0.7);
 }
 
 @media screen and (min-width: 570px) {
-  .cards {
-    flex-direction: row;
-    justify-content: space-evenly;
-    width: 100%;
-  }
 
   .main-container {
     display: flex;
@@ -302,37 +287,92 @@ p {
     width: auto;
   }
 
-  .card {
-    margin-bottom: 5rem;
-    flex-basis: 30%;
+  .icon {
+    width: 6.875rem;
+    height: 5.25rem;
+    justify-content: center;
   }
 
-  .trans-bg {
-    min-height: 595px;
+  .about-me, .icons {
+    height: 220px;
+  }
+
+  .about-me {
+    font-size: 18px;
+    overflow: auto;
+  }
+
+  .skills-container, .about {
+    margin: auto 10px;
   }
 }
 
-@media screen and (min-width: 700px) {
-  .about {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+@media screen and (min-width: 900px) {
 
-  .about > p {
+  .skills-container, .about {
     flex-basis: 30%;
-    padding: 10px;
-    font-size: 20px;
+  }
+}
+
+/*********************** Projects section *************************/
+
+.projects-container {
+  display: flex;
+  /* align-items: center; */
+  flex-wrap: wrap;
+  /* justify-content: center; */
+  flex-direction: column;
+  background: rgb(76, 104, 189);
+  /* background: url("https://cdn.pixabay.com/photo/2016/11/19/14/00/code-1839406_960_720.jpg");
+  background-size: cover; */
+}
+
+.cards-title {
+  text-align: center;
+  font-size: 30px;
+  font-style: italic;
+  background: white;
+  font-family: "Open Sans Condensed", sans-serif;
+  margin: 5px 0;
+  width: 250px;
+  border-radius: 25px;
+  box-shadow: 2px 2px 4px 5px rgba(0, 0, 0, 0.7);
+}
+
+.cards {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.card {
+  border: 3px solid #4a27fd;
+  margin: 20px 0 10px 0;
+  background: rgb(230, 220, 220);;
+  /* box-shadow: 4px 3px 13px 6px rgba(0, 0, 0, 0.7); */
+  box-shadow: 2px 2px 4px 6px rgba(0, 0, 0, 0.7);
+  width: 250px;
+  /* height: auto; */
+  padding: 2px;
+  flex: 1;
+  border-radius: 20px;
+}
+
+@media screen and (min-width: 800px) {
+  .projects-container {
+    flex-direction: row;
+    justify-content: center;
   }
 
-  .square {
-    flex-basis: 50%;
+  .cards {
+    flex-direction: row;    
+    width: 100%;
   }
 
-  /* .square,
-  .about > p {
-    margin: 10px;
-  } */
+  .card {
+    margin: 1rem;
+  }
+
 }
 
 /*********************** Card section *************************/
@@ -354,7 +394,7 @@ p {
 .title {
   font-size: 35px;
   text-decoration: underline;
-  color: rgb(7, 105, 218);
+  color: rgb(9, 117, 108);
   text-align: center;
 }
 
@@ -370,6 +410,7 @@ p {
   width: 100%;
   background: #fff;
   text-align: center;
+  border-radius: 20px;
 }
 
 .linkBtn {
@@ -581,7 +622,7 @@ p {
 .dish-ins {
   max-width: 100%;
   line-height: 140%;
-  /* flex-basis: 100%; */
+  flex-basis: 100%;
 }
 
 .ing-measure-container {

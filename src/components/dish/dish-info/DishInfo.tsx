@@ -1,6 +1,7 @@
 import { LinearProgress } from '@material-ui/core';
 import { useCallback, useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import { useGlobalContext } from '../../../context';
 import { TopButton } from '../../TopButton';
 
 /* 
@@ -41,6 +42,7 @@ export const DishInfo = () => {
     const { name } = useParams() as any;
     const [loading, setLoading] = useState(false);
     const [dishInfo, setDishInfo] = useState<DishInfoType>();
+    const { setSearchTerm } = useGlobalContext();
 
     const getDishInfo = useCallback(async () => {
         try {
@@ -122,7 +124,7 @@ export const DishInfo = () => {
                     return <span key={index}> {line}<br/></span>
                 })}
             </p>
-            <Link to="/disheslist" className="back-btn">Back to list</Link>
+            <Link to="/disheslist" className="back-btn" onClick={() => setSearchTerm("")}>Back to list</Link>
         </article>
     )
 }
