@@ -188,22 +188,24 @@ ul {
 }
 
 .about-me {
-  padding: 13% 15px;
+  padding: 7% 15px;
+  font-size: 15px;
+  line-height: 1.4;
   /* height: 200px; */
-  overflow: scroll;
+  /* overflow: scroll; */
 }
 
 .about-me, .icons {
-  height: 330px;
+  height: 270px;
 }
 
-.square {
+/* .square {
   height: 390px;
-  /* box-shadow: 3px 5px 3px 3px rgba(0, 0, 0, 0.7); */
+  box-shadow: 3px 5px 3px 3px rgba(0, 0, 0, 0.7);
   width: 100%;
   margin: 0 auto;
   opacity: 0.5;
-}
+} */
 
 .skills {
   text-align: center;
@@ -228,12 +230,12 @@ ul {
 .icons {
   background: rgba(247, 244, 244, 0.95);
   padding-top: 10px;
-  box-shadow: 2px 2px 4px 5px rgba(0, 0, 0, 0.7);
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.7);
 }
 
 .icon {
-  width: 4.875rem;
-  height: 4.25rem;
+  width: 3.875rem;
+  height: 3.25rem;
   justify-content: center;
   box-shadow: 3px 3px 2px 2px rgba(0, 0, 0, 0.7);
   margin: 3px;
@@ -244,12 +246,12 @@ ul {
   border-radius: 25px;
 }
 
-.trans-bg {
-  width: 100%;
+/* .trans-bg { */
+  /* width: 100%; */
   /* background: rgba(0, 0, 0, 0.7); */
   /* background: rgb(76, 104, 189); */
-  height: 390px;
-}
+  /* height: 390px; */
+/* } */
 
 .main-header {
   display: flex;
@@ -264,13 +266,24 @@ ul {
 .about-header,
 .about-me {
   background: rgb(247, 244, 244);
-  font-family: "Open Sans Condensed", sans-serif;
+  /* font-family: "Open Sans Condensed", sans-serif; */
   font-style: italic;
   font-weight: bold;
-  box-shadow: 2px 2px 4px 5px rgba(0, 0, 0, 0.7);
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.7);
 }
 
-@media screen and (min-width: 570px) {
+@media screen and (min-width: 426px) {
+  .icon {
+    width: 4.875rem;
+    height: 4.25rem;
+  }
+
+  .about-me {
+    font-size: 19px;
+  }
+}
+
+@media screen and (min-width: 588px) {
 
   .main-container {
     display: flex;
@@ -294,12 +307,13 @@ ul {
   }
 
   .about-me, .icons {
-    height: 220px;
+    height: 230px;
   }
 
   .about-me {
-    font-size: 18px;
-    overflow: auto;
+    font-size: 22px;
+    font-family:'Times New Roman', Times, serif;
+    /* overflow: auto; */
   }
 
   .skills-container, .about {
@@ -307,7 +321,7 @@ ul {
   }
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 910px) {
 
   .skills-container, .about {
     flex-basis: 30%;
@@ -325,37 +339,40 @@ ul {
   background: rgb(76, 104, 189);
   /* background: url("https://cdn.pixabay.com/photo/2016/11/19/14/00/code-1839406_960_720.jpg");
   background-size: cover; */
+  width: 100%;
 }
 
 .cards-title {
   text-align: center;
-  font-size: 30px;
+  font-size: 28px;
   font-style: italic;
   background: white;
-  font-family: "Open Sans Condensed", sans-serif;
-  margin: 5px 0;
-  width: 250px;
+  /* font-family: "Open Sans Condensed", sans-serif; */
+  margin: 5px auto;
+  width: 50%;
   border-radius: 25px;
-  box-shadow: 2px 2px 4px 5px rgba(0, 0, 0, 0.7);
+  box-shadow: 2px 2px 3px 3px rgba(0, 0, 0, 0.7);
 }
 
 .cards {
   display: flex;
   align-items: center;
   flex-direction: column;
+  justify-content: space-evenly;
+  margin: 0 10px;
 }
 
 .card {
-  border: 3px solid #4a27fd;
+  /* border: 2px solid #4a27fd; */
   margin: 20px 0 10px 0;
   background: rgb(230, 220, 220);;
-  /* box-shadow: 4px 3px 13px 6px rgba(0, 0, 0, 0.7); */
-  box-shadow: 2px 2px 4px 6px rgba(0, 0, 0, 0.7);
-  width: 250px;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.7);
+  /* width: 250px; */
   /* height: auto; */
   padding: 2px;
-  flex: 1;
+  /* flex: 1; */
   border-radius: 20px;
+  padding: 5px;
 }
 
 @media screen and (min-width: 800px) {
@@ -367,10 +384,6 @@ ul {
   .cards {
     flex-direction: row;    
     width: 100%;
-  }
-
-  .card {
-    margin: 1rem;
   }
 
 }
@@ -394,7 +407,7 @@ ul {
 .title {
   font-size: 35px;
   text-decoration: underline;
-  color: rgb(9, 117, 108);
+  color: rgb(20, 27, 27);
   text-align: center;
 }
 
