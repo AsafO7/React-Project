@@ -45,7 +45,7 @@ body {
 /*********************** Navbar section *************************/
 
 nav {
-  background: rgb(247, 242, 242);
+  /* background: rgb(247, 242, 242); */
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 
@@ -72,11 +72,9 @@ nav {
 
 .logo {
   height: 30px;
-  font-weight: 300;
   letter-spacing: 2px;
-  font-family: "Roboto", sans-serif;
+  font-family: none;
   font-style: italic;
-  font-weight: bold;
 }
 
 ul {
@@ -176,7 +174,8 @@ ul {
   /* min-height: 595px; */
   /* height: 100%; */
   /* background: #e5e5e5; */
-  background: rgb(76, 104, 189);
+  /* background: rgb(76, 104, 189); */
+  background: rgb(251, 251, 251);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -228,7 +227,7 @@ ul {
 }
 
 .icons {
-  background: rgba(247, 244, 244, 0.95);
+  background: rgb(247, 244, 244);
   padding-top: 10px;
   box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.7);
 }
@@ -237,7 +236,7 @@ ul {
   width: 3.875rem;
   height: 3.25rem;
   justify-content: center;
-  box-shadow: 3px 3px 2px 2px rgba(0, 0, 0, 0.7);
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.7);
   margin: 3px;
   border-radius: 25px;
 }
@@ -266,7 +265,6 @@ ul {
 .about-header,
 .about-me {
   background: rgb(247, 244, 244);
-  /* font-family: "Open Sans Condensed", sans-serif; */
   font-style: italic;
   font-weight: bold;
   box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.7);
@@ -312,7 +310,6 @@ ul {
 
   .about-me {
     font-size: 22px;
-    font-family:'Times New Roman', Times, serif;
     /* overflow: auto; */
   }
 
@@ -336,7 +333,7 @@ ul {
   flex-wrap: wrap;
   /* justify-content: center; */
   flex-direction: column;
-  background: rgb(76, 104, 189);
+  background: rgb(251, 251, 251);
   /* background: url("https://cdn.pixabay.com/photo/2016/11/19/14/00/code-1839406_960_720.jpg");
   background-size: cover; */
   width: 100%;
@@ -346,12 +343,11 @@ ul {
   text-align: center;
   font-size: 28px;
   font-style: italic;
-  background: white;
-  /* font-family: "Open Sans Condensed", sans-serif; */
+  background: rgb(247, 244, 244);
   margin: 5px auto;
   width: 50%;
   border-radius: 25px;
-  box-shadow: 2px 2px 3px 3px rgba(0, 0, 0, 0.7);
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.7);
 }
 
 .cards {
@@ -365,7 +361,7 @@ ul {
 .card {
   /* border: 2px solid #4a27fd; */
   margin: 20px 0 10px 0;
-  background: rgb(230, 220, 220);;
+  background: rgb(247, 244, 244);
   box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.7);
   /* width: 250px; */
   /* height: auto; */
@@ -375,7 +371,7 @@ ul {
   padding: 5px;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 910px) {
   .projects-container {
     flex-direction: row;
     justify-content: center;
@@ -384,6 +380,10 @@ ul {
   .cards {
     flex-direction: row;    
     width: 100%;
+  }
+
+  .card {
+    font-size: 20px;
   }
 
 }
@@ -414,14 +414,14 @@ ul {
 .desc {
   padding: 10px 2px;
   white-space: pre-line;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif; */
   text-align: center;
 }
 
 .linkBtn-container {
   width: 100%;
-  background: #fff;
+  background: rgb(196, 193, 193);
   text-align: center;
   border-radius: 20px;
 }
@@ -434,7 +434,16 @@ ul {
   color: blue;
   letter-spacing: 2px;
   /* width: 100%; */
+  transition: all 0.5s;
+  text-decoration: none;
 }
+
+.linkBtn:hover {
+  color:rgb(0, 119, 255);
+  text-decoration: underline;
+}
+
+
 
 /*********************** Hero section *************************/
 
@@ -456,11 +465,12 @@ ul {
 .hero-about {
   font-size: 14px;
   flex-basis: 50%;
-  font-family: Arial, Helvetica, sans-serif;
+  /* font-family: Arial, Helvetica, sans-serif; */
   padding: 10px;
   font-weight: bold;
   letter-spacing: 1px;
   color: rgb(22, 21, 21);
+  line-height: 1.3;
 }
 
 @media screen and (min-width: 838px) {
@@ -489,14 +499,14 @@ ul {
   justify-content: space-evenly;
 }
 
-.form-container > label,
+/* .form-container > label,
 #name {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-}
+} */
 
 .form-container > label {
-  font-size: 14px;
+  font-size: 16px;
   color: #414040;
   letter-spacing: 1px;
   font-weight: bold;
@@ -509,7 +519,7 @@ ul {
 
 @media screen and (min-width: 462px) {
   .form-container > label {
-    font-size: 23px;
+    font-size: 25px;
   }
 
   #name {
