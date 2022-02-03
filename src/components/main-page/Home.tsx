@@ -1,11 +1,12 @@
-import { cardData } from "../../data";
-import { Card } from "../main-page/card/Card";
+import { Projects } from "../projects/Projects";
 
 /* 
 2) In this page, create 2 cards: one for the vanilla js project and one for the restaurant project. - Done
 3) Link the cards to the project pages.
 4) Style this page. Done
 */
+
+
 
 export const Home = () => {
     return (
@@ -26,7 +27,7 @@ export const Home = () => {
                     {/* <div className="square">Future picture here</div> */}
                 </div>
                 <div className="skills-container">
-                    <h2 className="skill-header">My Skills</h2>
+                    <h2 className="skill-header">Skills</h2>
                     <div className="icons">
                         <img className="icon" src="https://img.icons8.com/color/144/000000/html-5--v2.png" alt="html"
                         loading="lazy"/>
@@ -40,7 +41,8 @@ export const Home = () => {
                     {/* <h2 className="cards-title">My Projects</h2> */}
                 </div>
             </section>
-            <section className="projects-container">
+            <Projects />
+            {/* <section className="projects-container">
                 <h2 className="cards-title">My Projects</h2>
                 <section className="cards">
                     {cardData.map((item) => {
@@ -50,7 +52,7 @@ export const Home = () => {
                         </div>
                     })}
                 </section>
-            </section>
+            </section> */}
         </main>
     )
 }

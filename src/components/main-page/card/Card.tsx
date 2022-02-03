@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+
 /*
 1) Make a card component which includes: an image, a title, a paragraph, and a link. - Done
 2) Write the data in data.js. - Done
@@ -17,9 +18,10 @@ const returnLinks = (title: string, link: string) => {
     else { return <Link className="linkBtn" to={link}>Check out</Link> }
 }
 
+
 export const Card: React.FC<Props> = ({image, title, description, link}) => {
     return (
-        <article>
+        <article className="card-container">
             <img src={image} alt={image} className="image"></img>
             <h2 className="title">{title}</h2>
             <h4 className="desc">{description}</h4>
