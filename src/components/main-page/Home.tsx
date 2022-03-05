@@ -1,4 +1,7 @@
-import { Projects } from "../projects/Projects";
+// import { Projects } from "../projects/Projects"
+// import { Casino } from "@material-ui/icons"
+import { Casino, RestaurantMenu } from "@mui/icons-material";
+import { Link } from "react-router-dom";
 
 /* 
 2) In this page, create 2 cards: one for the vanilla js project and one for the restaurant project. - Done
@@ -11,23 +14,17 @@ import { Projects } from "../projects/Projects";
 export const Home = () => {
     return (
         <main className="main-container">
-            {/* <header className="main-header"> */}
-                {/* <div className="trans-bg"> */}
-                    {/* <img src="https://cdn.pixabay.com/photo/2015/09/05/20/02/coding-924920_960_720.jpg" alt="pic"
-                        className="square"></img> */}
-                {/* </div> */}
-            {/* </header> */}
             <section className="skills">
-                
                 <div className="about">
-                    <h2 className="about-header">About Me</h2>
-                    <p className="about-me">My name is Asaf Ovadya, in 1 year I'll graduate from The
-                        Open University of Israel with a B.Sc in Computer Science
-                        and I'm looking for my first job as a Front-End Developer!</p>
-                    {/* <div className="square">Future picture here</div> */}
+                    <h3 className="about-header">My name is Asaf Ovadya</h3>
+                    <p className="about-me">C.S student of The
+                        Open University of Israel.
+                    </p>
+                    <h4>I'm looking for my first job as a Front-end developer.</h4>
+                    <Link to="/contact"><button className="contact">Contact me</button></Link>
                 </div>
-                <div className="skills-container">
-                    <h2 className="skill-header">Skills</h2>
+                <div className="my-image">
+                    {/* <h2 className="skill-header">Skills</h2>
                     <div className="icons">
                         <img className="icon" src="https://img.icons8.com/color/144/000000/html-5--v2.png" alt="html"
                         loading="lazy"/>
@@ -37,22 +34,30 @@ export const Home = () => {
                         loading="lazy"/>
                         <img className="icon" src="https://img.icons8.com/color/144/000000/react-native.png" alt="react"
                         loading="lazy"/>
-                    </div>
-                    {/* <h2 className="cards-title">My Projects</h2> */}
+                    </div> */}
+                    Future picture here
                 </div>
             </section>
-            <Projects />
-            {/* <section className="projects-container">
-                <h2 className="cards-title">My Projects</h2>
-                <section className="cards">
-                    {cardData.map((item) => {
-                        const { id, image, title, description, link } = item;
-                        return <div key={id} className="card">
-                            <Card image={image} title={title} description={description} link={link}/>
-                        </div>
-                    })}
-                </section>
-            </section> */}
+            <section className="projects">
+                <div className="project">
+                    <Casino fontSize="large" color="action"/>
+                    <h3>Mini games project</h3>
+                    <h4>Vanilla Javascript</h4>
+                    <a href="https://small-mini-games-project.netlify.app/" className="pbtn">Check out</a>
+                </div>
+                <div className="project">
+                    <RestaurantMenu fontSize="large" color="action"/>
+                    <h3>Recipe menu project</h3>
+                    <h4>React and Typescript</h4>
+                    <Link to="/disheslist" className="pbtn">Check out</Link>
+                </div>
+                <div className="project">
+                    <RestaurantMenu fontSize="large" color="action"/>
+                    <h3>Recipe menu project</h3>
+                    <h4>React and Typescript</h4>
+                    <Link to="#" className="pbtn">Check out</Link>
+                </div>
+            </section>
         </main>
     )
 }
