@@ -13,7 +13,8 @@
 }
 
 /* body { */
-  /* height: 100%; */
+  /* height: 90vh; */
+  /* display: flex; */
   /* position: relative; */
   /* background-color: rgb(59, 10, 194); */
 /* } */
@@ -179,8 +180,19 @@ ul {
 
 /*********************** Home section *************************/
 
+/* #root { */
+  /* height: 100%; */
+/* } */
+
 .main-container{
   background-color: rgb(59, 10, 194);
+  position: absolute;
+  height: 93.5%;
+  /* position: relative; */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   /* height: stretch; */
   /* background: rgb(35, 183, 241); */
   /* display: flex; */
@@ -188,6 +200,10 @@ ul {
   /* justify-content: space-evenly; */
   /* font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif */
 }
+
+/* .heightDiv {
+  display: table-row;
+} */
 
 .about {
   display: flex;
@@ -226,8 +242,18 @@ ul {
 .skills {
   /* text-align: center; */
   display: flex;
-  height: 459px;
-  margin-left: 20%;
+  /* height: 459px; */
+  /* margin-left: 20%; */
+  /* margin-top: 10%; */
+  justify-content: space-evenly;
+  background-color: rgb(59, 10, 194);
+  flex-basis: 75%;
+  padding: 15px;
+  /* height: 70%; */
+  /* flex-grow: 1; */
+  /* flex-shrink: 0; */
+  /* position: absolute; */
+  /* top: 0; */
   /* justify-content: space-around; */
   /* justify-content: center; */
 }
@@ -270,11 +296,6 @@ ul {
   margin-right: 15px;
 }
 
-/* .projects {
-  background: rgb(202, 162, 109);
-  height: 100%;
-} */
-
 .contact {
   width: 150px;
   font-size: larger;
@@ -284,6 +305,7 @@ ul {
   letter-spacing: 1px;
   background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgb(182, 98, 98) 0%);
   color: white;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 426px) {
@@ -369,10 +391,20 @@ ul {
 
 /*********************** Projects section *************************/
 
+/* .projects-container, .skills-container {
+  display: table-row;
+  height: fit-content;
+} */
+
 .projects {
   display: flex;
   justify-content: space-evenly;
   background: rgb(202, 162, 109);
+  /* height: fit-content; */
+  /* flex-grow: 1; */
+  flex-basis: 25%;
+  /* position: absolute; */
+  /* bottom: 0; */
   /* align-items: center; */
   /* padding-top: 10px; */
 }
@@ -389,7 +421,7 @@ ul {
 }
 
 .project > h3, h4 {
-  padding: 5px;
+  /* padding: 5px; */
   text-align: center;
 }
 
@@ -549,8 +581,8 @@ ul {
   display: flex;
   /* justify-content: center; */
   background: rgb(199, 164, 118);
-  margin: 15px 0;
-  box-shadow: 3px 5px 10px 4px rgba(0, 0, 0, 0.7);
+  /* margin: 15px 0; */
+  /* box-shadow: 3px 5px 10px 4px rgba(0, 0, 0, 0.7); */
 }
 
 .hero {
