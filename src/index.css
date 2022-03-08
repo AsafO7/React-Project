@@ -4,6 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Vollkorn:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
 
 
 * {
@@ -184,35 +185,32 @@ ul {
   /* height: 100%; */
 /* } */
 
+.my-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  /* background: url("https://i.ibb.co/kq16mZq/e.png"); */
+  border: 3px solid black;
+  background-repeat: no-repeat;
+  margin: auto 0;
+
+}
+
 .main-container{
   background-color: rgb(59, 10, 194);
   position: absolute;
-  height: 93.5%;
-  /* position: relative; */
+  height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  /* height: stretch; */
-  /* background: rgb(35, 183, 241); */
-  /* display: flex; */
-  /* flex-wrap: wrap; */
-  /* justify-content: space-evenly; */
-  /* font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif */
 }
 
-/* .heightDiv {
-  display: table-row;
-} */
 
 .about {
   display: flex;
   flex-direction: column;
-  flex-basis: 40%;
+  flex-basis: 30%;
   margin: auto 0;
-  /* justify-content: space-around; */
-  /* gap: 4rem; */
-
 }
 
 .about-me {
@@ -222,7 +220,6 @@ ul {
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: bold;
   letter-spacing: 1px;
-  /* margin-top: auto; */
 }
 
 .about-header {
@@ -240,22 +237,23 @@ ul {
 }
 
 .skills {
-  /* text-align: center; */
   display: flex;
-  /* height: 459px; */
-  /* margin-left: 20%; */
-  /* margin-top: 10%; */
   justify-content: space-evenly;
   background-color: rgb(59, 10, 194);
   flex-basis: 75%;
   padding: 15px;
-  /* height: 70%; */
-  /* flex-grow: 1; */
-  /* flex-shrink: 0; */
-  /* position: absolute; */
-  /* top: 0; */
-  /* justify-content: space-around; */
-  /* justify-content: center; */
+  animation: up-to-down 0.7s ease-out forwards;
+  transform: translateY(-500%);
+}
+
+@keyframes up-to-down {
+  0% {
+    transform: translateY(-500%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
 }
 
 .skill-header {
@@ -264,10 +262,6 @@ ul {
   /* font-style: italic; */
   font-weight: bold;
 }
-
-/* .my-image {
-  flex-basis: 60%;
-} */
 
 .icons {
   padding-top: 10px;
@@ -400,13 +394,7 @@ ul {
   display: flex;
   justify-content: space-evenly;
   background: rgb(202, 162, 109);
-  /* height: fit-content; */
-  /* flex-grow: 1; */
   flex-basis: 25%;
-  /* position: absolute; */
-  /* bottom: 0; */
-  /* align-items: center; */
-  /* padding-top: 10px; */
 }
 
 .project {
@@ -418,6 +406,33 @@ ul {
   border-left: 1px solid gray;
   border-right: 1px solid gray;
   padding: 10px 20px;
+  --right-to-left-delay: 0.6s;
+}
+
+#proj1, #proj2, #proj3 {
+  transform: translateX(500%);
+}
+
+#proj1 {
+  animation: right-to-left calc(var(--right-to-left-delay)) ease-in-out forwards;
+}
+
+#proj2 {
+  animation: right-to-left calc(var(--right-to-left-delay) + 0.2s) ease-in-out forwards;
+}
+
+#proj3 {
+  animation: right-to-left calc(var(--right-to-left-delay) + 0.4s) ease-in-out forwards;
+}
+
+@keyframes right-to-left {
+  0% {
+    transform: translateX(500%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
 }
 
 .project > h3, h4 {
@@ -436,7 +451,7 @@ ul {
 
 .pbtn {
   border: none;
-  background: turquoise;
+  background-color: hsl(174, 58%, 49%);
   border-radius: 20px;
   height: 25px;
   width: 80px;
@@ -448,6 +463,11 @@ ul {
   font-weight: bold;
   text-decoration: none;
   box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.7);
+  transition: background-color 0.3s linear;
+}
+
+.pbtn:hover {
+  background-color: hsl(174, 97%, 56%);
 }
 
 @media screen and (min-width: 428px) {
@@ -579,10 +599,7 @@ ul {
 .hero-container {
   width: 100%;
   display: flex;
-  /* justify-content: center; */
   background: rgb(199, 164, 118);
-  /* margin: 15px 0; */
-  /* box-shadow: 3px 5px 10px 4px rgba(0, 0, 0, 0.7); */
 }
 
 .hero {
@@ -594,9 +611,9 @@ ul {
 .hero-about {
   font-size: 14px;
   flex-basis: 50%;
-  /* font-family: Arial, Helvetica, sans-serif; */
+  font-family: 'Courgette', cursive;
   padding: 10px;
-  font-weight: bold;
+  /* font-weight: bold; */
   letter-spacing: 1px;
   color: rgb(22, 21, 21);
   line-height: 1.3;
@@ -666,6 +683,22 @@ ul {
   background: url("https://cdn.pixabay.com/photo/2016/11/18/14/05/brick-wall-1834784_960_720.jpg");
   background-size: cover;
   box-shadow: 3px 5px 14px rgba(0, 0, 0, 0.7);
+  animation: down-to-up 0.5s ease-out forwards;
+  transform: translateY(500%);
+}
+
+@keyframes down-to-up {
+  0% {
+    transform: translateY(500%);
+  }
+
+  90% {
+    transform: translateY(30%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
 }
 
 .name,

@@ -1,5 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react';
-import { useCallback } from 'react';
+import React, { useState, useContext, useEffect, useCallback } from 'react';
 
 
 
@@ -36,7 +35,8 @@ const AppProvider: React.FC = ({ children }) => {
       const data = await (await fetch(`${url}${searchTerm}`)).json();
       const { meals } = data;
       if(meals) {
-          const dishes: DishItemType[] = meals.map((dish: {idMeal: string, strMeal: string, strMealThumb: string}) => {
+          const dishes: DishItemType[] = meals.map((
+            dish: {idMeal: string, strMeal: string, strMealThumb: string}) => {
             const { idMeal, strMeal, strMealThumb } = dish;
             return { id: idMeal, name: strMeal, image: strMealThumb };
           })

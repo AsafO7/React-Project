@@ -8,7 +8,7 @@ import { DishInfo } from './components/dish/dish-info/DishInfo';
 function App() {
   return (
     <Router>
-      <Navbar />
+      {/* <Navbar /> */}
       <Switch>
         <Route exact path="/">
           <Home />
@@ -17,9 +17,11 @@ function App() {
           <Projects />
         </Route> */}
         <Route path="/disheslist">
+          <Navbar />
           <DishesList />
         </Route>
         <Route path="/dish/:name/">
+          <Navbar />
           <DishInfo />
         </Route>
       </Switch>
