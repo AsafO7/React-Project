@@ -1,6 +1,6 @@
 import { Email, GitHub, LinkedIn } from '@material-ui/icons'
 import { Casino, RestaurantMenu } from "@mui/icons-material";
-import React from 'react'
+import CalculateIcon from '@mui/icons-material/Calculate';
 // import { FaBehance, FaFacebook, FaLinkedin, FaTwitter } from 'react-icons/fa'
 
 
@@ -84,9 +84,9 @@ export const cardData = [
 
   {
     id: 3,
-    icon: <RestaurantMenu fontSize="large" color="action"/>,
-    texth3: "Recipe menu project",
-    texth4: "React and Typescript",
-    link: "/disheslist"
+    icon: <CalculateIcon fontSize="large" color="action"/>,
+    texth3: "Calculator project",
+    texth4: "React and Javascript",
+    link: "/calculator"
   },
 ]

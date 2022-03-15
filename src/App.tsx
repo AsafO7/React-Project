@@ -4,6 +4,7 @@ import { Home } from './components/main-page/Home';
 // import { Projects } from './components/projects/Projects';
 import { DishesList }  from './components/dish-list/DishesList';
 import { DishInfo } from './components/dish/dish-info/DishInfo';
+import { Calculator } from './components/Calculator/Calculator.js';
 
 function App() {
   return (
@@ -23,6 +24,10 @@ function App() {
         <Route path="/dish/:name/">
           <Navbar />
           <DishInfo />
+        </Route>
+        <Route path="/calculator">
+          <Navbar />
+          <Calculator />
         </Route>
       </Switch>
     </Router>
