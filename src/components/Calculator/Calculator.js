@@ -14,7 +14,10 @@ function checkIfOperand(c) {
     if(c === "+" || 
         c === "-" || 
         c === "*" ||
-        c === "/") {
+        c === "/" ||
+        c === "÷" ||
+        c === "×" ||
+        c === "−") {
             return true
         }
     return false
@@ -27,7 +30,10 @@ function countOperands(str) {
         if(str[i] === "+" || 
         str[i] === "-" || 
         str[i] === "*" ||
-        str[i] === "/") {
+        str[i] === "/" ||
+        str[i] === "÷" ||
+        str[i] === "×" ||
+        str[i] === "−") {
             count++;
         }
     }
@@ -54,6 +60,8 @@ function checkIfOperandBeforeSecondDot(str) {
     return true
 }
 
+let usedResult = false
+
 function reducer(state, {type, payload}) {
     switch(type) {
         case ACTIONS.ADD_DIGIT:
@@ -67,41 +75,73 @@ function reducer(state, {type, payload}) {
             !checkIfOperandBeforeSecondDot(state.currOp))) {
                return state
             }
-            
-            return { 
-                ...state,
-                currOp: `${state.currOp || ""}${payload}`
-            }
-        case ACTIONS.CHOOSE_OP:
-            if(!state.currOp) return { ...state } // expressions don't start with an operator.
-            // no dots before an operand
-            if(state.currOp.charAt(state.currOp.length - 1) === ".") { return state }
-            // no multiple operators in a row.
-            if(checkIfOperand(state.currOp.charAt(state.currOp.length - 1))) {
-                return { ...state }
-            }
-            if(payload === "/") {
-                let operand = "÷"
+
+            if(usedResult) {
+                usedResult = false
                 return {
                     ...state,
-                    currOp: `${state.currOp || ""}${operand}`
+                    // prevOp: "",
+                    currOp: payload
                 }
+            }
+            else {
+                return { 
+                    ...state,
+                    currOp: `${state.currOp || ""}${payload}`
+                }
+            }
+            
+        case ACTIONS.CHOOSE_OP:
+            if(!state.currOp && payload !== "-") return { ...state } // expressions don't start with an operator.
+            // no dots before an operand
+            // if() { return state }
+            // no multiple operators in a row.
+            if(state.currOp) {
+                if((checkIfOperand(state.currOp.charAt(state.currOp.length - 1)) && payload !== "-")
+                || state.currOp.charAt(state.currOp.length - 1) === ".") {
+                    return { ...state }
+                }
+            }
+            
+            if(usedResult) { usedResult = false }
+            let operand = ""
+            switch(payload) {
+                case "-":
+                    operand = "−"
+                    break
+                case "*":
+                    operand = "×"
+                    break
+                case "/":
+                    operand = "÷"
+                    break
+                default:
+                    operand = "+"
+                    break
             }
             return {
                 ...state,
-                currOp: `${state.currOp || ""}${payload}`
+                currOp: `${state.currOp || ""}${operand}`
             }
+            // return {
+            //     ...state,
+            //     currOp: `${state.currOp || ""}${payload}`
+            // }
         case ACTIONS.RESULT:
             let result = ""
             if(state.currOp) {
-                if(!checkIfOperand(state.currOp.charAt(state.currOp.length - 1))) {
-                    let total = state.currOp.replaceAll("÷", "/")
+                if(!checkIfOperand(state.currOp.charAt(state.currOp.length - 1))
+                && state.currOp.charAt(state.currOp.length - 1) !== ".") {
+                    let total = state.currOp.replaceAll("÷", "/").replaceAll("×", "*").replaceAll("−", "-")
                     result = `${evaluate(total)}`
                 }
                 else {
                     return state 
                 }
             }
+            usedResult = true
+            if(result === "Infinity" || result === "NaN") { result = "0" }
+            console.log(result)
             return {
                 ...state,
                 prevOp: state.currOp,
@@ -134,7 +174,7 @@ export const Calculator = () => {
             <button className="one" onClick={() => dispatch({ type: ACTIONS.ADD_DIGIT, payload: "1"})}>1</button>
             <button className="two" onClick={() => dispatch({ type: ACTIONS.ADD_DIGIT, payload: "2"})}>2</button>
             <button className="three"onClick={() => dispatch({ type: ACTIONS.ADD_DIGIT, payload: "3"})}>3</button>
-            <button className="multi" onClick={() => dispatch({ type: ACTIONS.CHOOSE_OP, payload: "*"})}>*</button>
+            <button className="multi" onClick={() => dispatch({ type: ACTIONS.CHOOSE_OP, payload: "*"})}>×</button>
             <button className="four" onClick={() => dispatch({ type: ACTIONS.ADD_DIGIT, payload: "4"})}>4</button>
             <button className="five" onClick={() => dispatch({ type: ACTIONS.ADD_DIGIT, payload: "5"})}>5</button>
             <button className="six" onClick={() => dispatch({ type: ACTIONS.ADD_DIGIT, payload: "6"})}>6</button>
@@ -142,7 +182,7 @@ export const Calculator = () => {
             <button className="seven" onClick={() => dispatch({ type: ACTIONS.ADD_DIGIT, payload: "7"})}>7</button>
             <button className="eight" onClick={() => dispatch({ type: ACTIONS.ADD_DIGIT, payload: "8"})}>8</button>
             <button className="nine" onClick={() => dispatch({ type: ACTIONS.ADD_DIGIT, payload: "9"})}>9</button>
-            <button className="sub" onClick={() => dispatch({ type: ACTIONS.CHOOSE_OP, payload: "-"})}>-</button>
+            <button className="sub" onClick={() => dispatch({ type: ACTIONS.CHOOSE_OP, payload: "-"})}>−</button>
             <button className="dot" onClick={() => dispatch({ type: ACTIONS.ADD_DIGIT, payload: "."})}>.</button>
             <button className="zero" onClick={() => dispatch({ type: ACTIONS.ADD_DIGIT, payload: "0"})}>0</button>
             <button className="result" onClick={() => dispatch({ type: ACTIONS.RESULT})}>=</button>

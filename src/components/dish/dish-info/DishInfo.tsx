@@ -92,24 +92,32 @@ export const DishInfo = () => {
     return (
         
         <article className="dish">
-            <TopButton />
+            <header>
+                <TopButton />
+            </header>
+            <div className="dish-title">
+                <span className="dish-name">Dish name
+                    <h5 className="d-name">{dishName}</h5>
+                </span> 
+                <span className="dish-cat">Category
+                    <h5 className="d-cat">{category}</h5>
+                </span> 
+            </div>
             <img src={image} alt={dishName} className="dish-img"></img>
             <div className="info-container">
-                <span className="dish-name">
-                    <u>Dish name:</u> {dishName}
-                </span>
-                <span className="dish-cat"><u>Category:</u> {category}</span>
                 <section className="ing-measure-container">
-                    <section className="dish-ing"><u>Ingredients:</u>
-                            <ul>
+                    <section className="ing-sec">
+                        <div className="dish-ing">Ingredients</div>
+                            <ul className="ing-list">
                                 {ingredients.map((ing, index) => {
                                     if(ing) { return <li key={id+index} className="ing"> {ing} </li> }
                                     return null;
                                 })}
                             </ul>
                     </section>
-                    <section className="dish-measure"><u>Measurements:</u>
-                            <ul>
+                    <section className="measure-sec">
+                        <div className="dish-measure">Measurements</div>
+                            <ul className="ing-measure-list">
                                 {measurements.map((measure, index) => {
                                     if(measure) { return <li key={id+index} className="measure">
                                         {measure} </li> }
@@ -119,9 +127,10 @@ export const DishInfo = () => {
                     </section>
                 </section>
             </div>
-            <p className="dish-ins"><u>Instructions:</u><br/>
+            <p className="ins">
+                <span className="dish-ins">Instructions</span>
                 { instructions.map((line, index) => {
-                    return <span key={index}> {line}<br/></span>
+                    return <span key={index} className="dish-ins-line"> {line}<br/></span>
                 })}
             </p>
             <Link to="/disheslist" className="back-btn" onClick={() => setSearchTerm("")}>Back to list</Link>

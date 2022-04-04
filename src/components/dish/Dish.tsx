@@ -12,11 +12,14 @@ type Props = {
 export const Dish: React.FC<Props> = ({ item }) => {
     const { name, image } = item;
     return (
-        <article className="item">
-            <img src={image} alt={name} className="item-img"></img>
+        <div className="dish-container">
+            <Link to={`/dish/${name}`} className="item">
+                {/* <article className="item"></article> */}
+                <img src={image} alt="" className="item-img"></img>
+            </Link>
             <div className="name">
-                <Link to={`/dish/${name}`} className="info-link"><u>Dish name:</u> {name}</Link>
+                {name}
             </div>
-        </article>
+        </div>
     )
 }

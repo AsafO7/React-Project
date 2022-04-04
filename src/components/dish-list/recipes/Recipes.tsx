@@ -24,7 +24,7 @@ export const Recipes = () => {
                 <ul className="container">
                 {recipes?.map((dish) => {
                     return (
-                        <li key={dish.id}><Dish item={dish} /></li>
+                        <li key={dish.id} className="dish-li"><Dish item={dish} /></li>
                     )
                 })}
                 </ul>
