@@ -12,7 +12,10 @@ export const Modal:React.FC<Props> = ({ open, children, onClose }) => {
         <div className="modal-overlay"/>
         <div className="modal-container">
             <button onClick={onClose} className="modal-btn">X</button>
-            <div className="day-event">{children}</div>
+            <div className="day-event">
+                <h1>Events</h1>
+                <ul>{children}</ul>
+            </div>
         </div>
     </>)
 }

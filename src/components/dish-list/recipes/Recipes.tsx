@@ -20,7 +20,7 @@ export const Recipes = () => {
     if(recipes.length < 1) { return <h1 className="error">No recipe found</h1> }
     return (
         <>
-            <main>
+            <main style={{background: "burlywood", height: "100vh"}}>
                 <ul className="container">
                 {recipes?.map((dish) => {
                     return (
