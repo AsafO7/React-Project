@@ -11,7 +11,7 @@ export const About = () => {
             <h4>I'm looking for my first job as a Front-end developer.</h4>
             <a href="mailto:ovasaf@gmail.com" className="contact"><button className="contact">Contact me</button></a>
         </div>
-        <img className="my-image" src="https://i.ibb.co/kq16mZq/e.png" alt=""></img>
+        <img className="my-image" src="https://i.ibb.co/kq16mZq/e.png" alt="pic"></img>
     </section>
   )
 }

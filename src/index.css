@@ -82,6 +82,12 @@
   transition: background-color 0.2s linear;
 }
 
+.home-btn-dishlist {
+  bottom: 2%;
+  left: 2%;
+  top: unset;
+}
+
 .home-btn:hover {
   background-color: hsl(180, 87%, 48%);
 }
@@ -98,13 +104,23 @@
 
 }
 
-.main-container{
+#root {
+  height: 100vh;
+}
+
+.main-container {
   background-color: rgb(59, 10, 194);
   /* position: absolute; */
-  height: 100vh;
+  /* height: 100vh; */
   /* width: 100%; */
+  height: 100%;
   display: flex;
   flex-direction: column;
+  /* overflow: hidden; */
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 
@@ -258,7 +274,7 @@
   align-items: center;
   background: rgb(202, 162, 109);
   /* flex-basis: 20%; */
-  overflow: hidden;
+  /* overflow-y: scroll; */
   /* position: absolute; */
   /* width: 100%; */
   /* bottom: 0; */
@@ -516,8 +532,10 @@
 
 .name {
   letter-spacing: 2px;
-  font-size: 28px;
+  font-size: 23px;
   font-family: 'Noto Serif', serif;
+  width: 270px;
+  word-wrap: break-word;
 }
 
 .item-img {
@@ -559,20 +577,21 @@
   text-align: center;
   padding: auto;
   font-size: 23px;
-  background: hsl(192, 100%, 52%);
+  background: hsl(192, 93%, 48%);
   color: #000;
   text-decoration: none;
   margin: 10px;
   align-self: center;
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
+  /* box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7); */
   flex-shrink: 0;
 }
 
 .dish {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: wrap;
   background: chocolate;
+  justify-content: space-evenly;
   /* box-shadow: 1px 2px 2px 2px rgba(0, 0, 0, 0.7); */
   padding: 15px;
   /* animation: up-to-down 0.6s ease-out forwards; */
@@ -727,18 +746,18 @@
   }
 }
 
-@media screen and (min-width: 878px) {
-  .dish {
+/* @media screen and (min-width: 878px) { */
+  /* .dish { */
     /* width: 95%; */
     /* margin: 50px auto; */
-    flex-direction: row;
-    justify-content: space-evenly;
-  }
+    /* flex-direction: row; */
+    /* justify-content: space-evenly; */
+  /* } */
 
-  .dish-img {
-    align-self: flex-start;
-  }
-}
+  /* .dish-img { */
+    /* align-self: flex-start; */
+  /* } */
+/* } */
 
 @media screen and (min-width: 1000px) {
   /* .dish {
@@ -1089,6 +1108,14 @@
   align-self: flex-end;
   margin-top: 38px;
   margin-right: 2px;
+}
+
+.back-edit-btn {
+  margin-left: auto;
+  display: flex;
+  /* color: hsl(216, 100%, 50%); */
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 
 @media screen and (min-width: 430px) {

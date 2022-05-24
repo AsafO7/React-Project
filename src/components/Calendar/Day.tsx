@@ -6,6 +6,8 @@ import { v4 as uuidV4 } from "uuid";
 import { UseLocalStorage } from "../hooks/UseLocalStorage";
 import React from "react";
 import DeleteIcon from '@mui/icons-material/Delete';
+import EditIcon from '@mui/icons-material/Edit';
+import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 
 type Props = {
     numday: number,
@@ -27,11 +29,17 @@ export const Day:React.FC<Props> = ({numday, startDate, numOfDaysInMonth}) => {
     const [isOpen, setIsOpen] = useState(false)
     const [isFormOpen, setIsFormOpen] = useState(false)
     const [events, setEvents] = UseLocalStorage("events", [])
-    // const [hasEvent, setHasEvent] = useState(false)
+    const [editEventValue, setEditEventValue] = useState("")
+    const [currentEdit, setCurrentEdit] = useState("")
+
+    const editForm = React.useRef<any>()
 
     const dateToday = new Date(`${startDate.getMonth() + 2} ${numday - startDate.getDay()} 
                                 ${startDate.getFullYear()}`)
-    
+
+    React.useEffect(() => {
+        editForm.current?.focus()
+    },[currentEdit])
 
     function checkDate(d: number, m: number, y: number) {
         // console.log(d, m, y)
@@ -58,6 +66,25 @@ export const Day:React.FC<Props> = ({numday, startDate, numOfDaysInMonth}) => {
         })
     }
 
+    function setEditCurrent(id: string, desc: string) {
+        setCurrentEdit(id)
+        setEditEventValue(desc)
+        // isEditEvent = true
+    }
+
+    function handleEdit(e: React.FormEvent, event: DayEvent) {
+        e.preventDefault()
+
+        setEvents((prevEvents: DayEvent[]) => {
+            return prevEvents.map((ev) => {
+                if(ev.id === event.id) ev.desc = editEventValue
+                return ev
+            })
+        })
+        setCurrentEdit("")
+        // isEditEvent = false
+    }
+
     if(numday < startDate.getDay() + 1 || numOfDaysInMonth + startDate.getDay() < numday) {
         return <span className="num-day"></span>
     }
@@ -72,12 +99,27 @@ export const Day:React.FC<Props> = ({numday, startDate, numOfDaysInMonth}) => {
             <button className="add-event-btn" onClick={() => setIsFormOpen(true)}></button>
         </span>
         <Modal open={isOpen} onClose={() => setIsOpen(false)}>
+            {/* if there are events, map them to the modal */}
             {events &&  events.map((event: DayEvent) => {
                 if(checkDate(event.eDay, event.eMonth, event.eYear)) {
-                    return <li className="event-list-item" key={event.id}>• {event.desc} 
+                    return event.id !== currentEdit ? 
+                    <li className="event-list-item" key={event.id}>• {event.desc}
+                        <EditIcon style={{cursor: "pointer", color: "black", marginLeft: "auto"}}
+                        onClick={() => setEditCurrent(event.id, event.desc)} />
                         <DeleteIcon style={{cursor: "pointer", color: "black", marginLeft: "3px"}}
                         onClick={() => deleteEvent(event.id)} />
                     </li>
+                    :
+                    <div key={event.id} style={{display: "flex"}}>
+                        <form onSubmit={(e) => handleEdit(e, event)} style={{display: "inline-block"}}>
+                            <input value={editEventValue} onChange={(e) => setEditEventValue(e.target.value)}
+                            ref={editForm} />
+                        </form>
+                        <span className="back-edit-btn">Back
+                            <ArrowRightAltIcon style={{cursor: "pointer", color: "black"}}
+                            onClick={() => setCurrentEdit("")} />
+                        </span>
+                    </div>
                 }
                 else return null
             })}</Modal>

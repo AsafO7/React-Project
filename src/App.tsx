@@ -1,5 +1,5 @@
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { Navbar } from './components/navbar/Navbar';
+import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
+// import { Navbar } from './components/navbar/Navbar';
 import { Home } from './components/main-page/Home';
 // import { Projects } from './components/projects/Projects';
 import { DishesList }  from './components/dish-list/DishesList';
@@ -19,19 +19,19 @@ function App() {
           <Projects />
         </Route> */}
         <Route path="/disheslist">
-          <Navbar />
+          <Link to="/" className='home-btn home-btn-dishlist'>Home</Link>
           <DishesList />
         </Route>
         <Route path="/dish/:name/">
-          <Navbar />
+          <Link to="/" className='home-btn'>Home</Link>
           <DishInfo />
         </Route>
         <Route path="/calculator">
-          <Navbar />
+          <Link to="/" className='home-btn'>Home</Link>
           <Calculator />
         </Route>
         <Route path="/calendar">
-          <Navbar />
+          <Link to="/" className='home-btn'>Home</Link>
           <Calendar />
         </Route>
       </Switch>

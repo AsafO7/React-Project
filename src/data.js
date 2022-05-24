@@ -1,5 +1,5 @@
 import { Email, GitHub, LinkedIn } from '@material-ui/icons'
-import { Casino, RestaurantMenu } from "@mui/icons-material";
+import { /*Casino,*/ RestaurantMenu } from "@mui/icons-material";
 import CalculateIcon from '@mui/icons-material/Calculate';
 import DateRangeIcon from '@mui/icons-material/DateRange';
 
