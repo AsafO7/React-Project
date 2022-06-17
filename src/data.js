@@ -33,7 +33,7 @@ export const social = [
 export const cardData = [
   {
     id: 1,
-    icon: <RestaurantMenu fontSize="large" color="action"/>,
+    icon: <RestaurantMenu fontSize="large" sx={{ color: "wheat" }}/>,
     texth3: "Recipe menu project",
     texth4: "React and Typescript",
     link: "/disheslist"
@@ -41,7 +41,7 @@ export const cardData = [
 
   {
     id: 2,
-    icon: <CalculateIcon fontSize="large" color="action"/>,
+    icon: <CalculateIcon fontSize="large" sx={{ color: "wheat" }}/>,
     texth3: "Calculator project",
     texth4: "React and Javascript",
     link: "/calculator"
@@ -49,7 +49,7 @@ export const cardData = [
 
   {
     id: 3,
-    icon: <DateRangeIcon fontSize="large" color="action"/>,
+    icon: <DateRangeIcon fontSize="large" sx={{ color: "wheat" }}/>,
     texth3: "Calendar project",
     texth4: "React and Typescript",
     link: "/calendar"
