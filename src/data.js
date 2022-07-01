@@ -20,7 +20,7 @@ export const social = [
   },
   {
     id: 3,
-    url: 'https://www.linkedin.com/in/asaf-ovadya-219b76233/',
+    url: 'www.linkedin.com/in/asaf-ovadya',
     icon: <LinkedIn />,
   },
   {
@@ -33,7 +33,7 @@ export const social = [
 export const cardData = [
   {
     id: 1,
-    icon: <RestaurantMenu fontSize="large" sx={{ color: "wheat" }}/>,
+    icon: <RestaurantMenu fontSize="large" color="action"/>,
     texth3: "Recipe menu project",
     texth4: "React and Typescript",
     link: "/disheslist"
@@ -41,7 +41,7 @@ export const cardData = [
 
   {
     id: 2,
-    icon: <CalculateIcon fontSize="large" sx={{ color: "wheat" }}/>,
+    icon: <CalculateIcon fontSize="large" color="action"/>,
     texth3: "Calculator project",
     texth4: "React and Javascript",
     link: "/calculator"
@@ -49,7 +49,7 @@ export const cardData = [
 
   {
     id: 3,
-    icon: <DateRangeIcon fontSize="large" sx={{ color: "wheat" }}/>,
+    icon: <DateRangeIcon fontSize="large" color="action"/>,
     texth3: "Calendar project",
     texth4: "React and Typescript",
     link: "/calendar"

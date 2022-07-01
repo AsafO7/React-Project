@@ -15,12 +15,18 @@ This will be the restaurant home page. It will include:
 export const Recipes = () => {
 
     const { loading, recipes } = useGlobalContext();
-    if(loading) { return <LinearProgress />}
+    if(loading) { 
+        return <main style={{background: "burlywood", height: "100vh"}}><LinearProgress /></main>
+    }
 
-    if(recipes.length < 1) { return <h1 className="error">No recipe found</h1> }
+    if(recipes.length < 1) { 
+        return <main style={{background: "burlywood", height: "100vh"}}>
+            <h1 className="error">No recipe found</h1> 
+        </main>
+    }
     return (
         <>
-            <main style={{background: "burlywood", height: "100vh"}}>
+            <main style={{background: "burlywood", maxHeight: "100vh"}}>
                 <ul className="container">
                 {recipes?.map((dish) => {
                     return (

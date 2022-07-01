@@ -11,6 +11,7 @@ export const UseLocalStorage = (key: string, defaultValue: any) => {
     })
 
     useEffect(() => {
+        // we use stringify because you can only pass strings to local storage
         localStorage.setItem(key, JSON.stringify(value))
     }, [key, value])
 
