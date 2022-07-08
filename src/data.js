@@ -15,18 +15,18 @@ export const links = [
 export const social = [
   {
     id: 2,
-    url: '???',
-    icon: <Email />,
+    url: 'mailto:ovasaf@gmail.com',
+    icon: <Email fontSize='large'/>,
   },
   {
     id: 3,
     url: 'www.linkedin.com/in/asaf-ovadya',
-    icon: <LinkedIn />,
+    icon: <LinkedIn fontSize='large'/>,
   },
   {
     id: 4,
     url: 'https://github.com/AsafO7',
-    icon: <GitHub />
+    icon: <GitHub fontSize='large'/>
   }
 ]
 
