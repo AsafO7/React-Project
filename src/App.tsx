@@ -8,6 +8,10 @@ import { Calculator } from './components/Calculator/Calculator.js';
 import { Calendar } from './components/Calendar/Calendar';
 import { Tours } from './PracticeProjects/Tours/Tours';
 import { ToursFlip } from './PracticeProjects/ToursFlip/ToursFlip';
+import { MainSite } from './PracticeProjects/Creative-Agency-Clone/MainSite';
+
+
+
 
 function App() {
   return (
@@ -41,6 +45,9 @@ function App() {
         </Route>
         <Route path="/tours-flip">
           <ToursFlip />
+        </Route>
+        <Route path="/ca-clone">
+          <MainSite />
         </Route>
       </Switch>
     </Router>
