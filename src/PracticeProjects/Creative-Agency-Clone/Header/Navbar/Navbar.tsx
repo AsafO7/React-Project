@@ -31,19 +31,19 @@ export const Navbar = () => {
          : "https://daks2k3a4ib2z.cloudfront.net/5527a015715879bc5767ece2/5527f403715879bc5767fce1_hipster-white.png"} alt="logo"></img>
         <ul className="ca-nav-items" id="navItemsId">
             <li className="ca-nav-item">
-                <a href="ovasaf.com/ca-clone">HOME</a>
+                <a href="ca-clone">HOME</a>
             </li>
             <li className="ca-nav-item">
-                <a href="ovasaf.com/ca-clone">ABOUT</a>
+                <a href="ca-clone">ABOUT</a>
             </li>
             <li className="ca-nav-item">
-                <a href="ovasaf.com/ca-clone">SERVICES</a>
+                <a href="ca-clone">SERVICES</a>
             </li>
             <li className="ca-nav-item">
-                <a href="ovasaf.com/ca-clone">PORTFOLIO</a>
+                <a href="ca-clone">PORTFOLIO</a>
             </li>
             <li className="ca-nav-item">
-                <a href="ovasaf.com/ca-clone">CONTACT</a>
+                <a href="ca-clone">CONTACT</a>
             </li>
         </ul>
     </nav>

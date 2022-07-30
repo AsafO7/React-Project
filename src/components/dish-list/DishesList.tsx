@@ -6,7 +6,7 @@ import { TopButton } from '../TopButton';
 
 export const DishesList = () => {
   return (
-    <main>
+    <main className="dish-main">
         <header>
             {/* <Link to="/" className='home-btn home-btn-dishlist'>Home</Link> */}
             <TopButton />

@@ -1,3 +1,6 @@
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import { Footer } from "./Footer/Footer";
 import { Header } from "./Header/Header"
 import { MainContent } from "./MainContent/MainContent"
 
@@ -31,10 +34,18 @@ function reveal() {
 }
 
 export const MainSite = () => {
+
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0,0)
+    },[pathname])
+
     return (
         <div className="ca-clone-container">
             <Header />
             <MainContent />
+            <Footer />
         </div>
     )
 }

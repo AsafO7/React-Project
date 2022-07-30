@@ -11,7 +11,7 @@ export const Hero = () => {
                     Whether it's main courses, side-dishes, or desserts.<br/>
                     Whether it's breakfast, lunch or dinner, we've got you covered with an easy to use
                     site to choose your next meal!<br/><br/><br/>
-                    Type a recipe's name in the search bar and click on the dish for more info.
+                    Choose a category or type a recipe's name in the search bar and click on the dish for more info.
                 </p>
             </div>
         </>
